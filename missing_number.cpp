@@ -3,13 +3,19 @@
 using namespace std;
 
 int main(){
+  cin.tie(0);
+  cout.tie(0);
+  ios_base::sync_with_stdio(0);
+
   long n;
-  cin >> n;
+  scanf("%ld", &n);
   long totalSum = (n * (n+1))/2;
-  long cur;
+  long *arr = new long[n - 1];
   for(int i = 0; i < n-1; ++i){
-    cin >> cur;
-    totalSum -= cur;
+    scanf("%ld", &arr[i]);
+    totalSum -= arr[i];
   }
-  cout << totalSum << endl;
+  printf("%ld\n", totalSum);
+  fflush(stdout);
+  delete arr;
 }
